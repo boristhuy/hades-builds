@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Resources:
+  GetBuildsFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Runtime: java11
+      CodeUri: target/hades-builds-1.0-SNAPSHOT.jar
+      Handler: com.boristhuy.hadesbuilds.handler.GetHadesBuildsHandler::handleRequest
+      Events:
+        GetBuilds:
+          Type: Api
+          Properties:
+            Path: /builds
+            Method: get
