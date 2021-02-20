@@ -7,6 +7,7 @@ Resources:
       Runtime: java11
       CodeUri: target/hades-builds-1.0-SNAPSHOT.jar
       Handler: com.boristhuy.hadesbuilds.handler.GetHadesBuildsHandler::handleRequest
+      Description: 'Get all Hades builds'
       Events:
         GetBuilds:
           Type: Api
